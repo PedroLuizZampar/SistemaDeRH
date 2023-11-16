@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash.css' rel='stylesheet'>
+    <script src="index.js"></script>
+    <title>Sistema de RH</title>
+</head>
+<body>
+
+    <header>
+        <h1>Controle de Funcionários</h1>
+    </header>
+
+    <main>
+        <form onsubmit="addFuncionario(); return false;"> <!-- Chama a função no JS -->
+            <div>
+                <label for="nome">Nome: </label>
+                <input id="nome" type="text" class="input" required>
+            </div>
+            <div>
+                <label for="sobrenome">Sobrenome: </label>
+                <input id="sobrenome" type="text" class="input" required>
+            </div>
+            <div>
+                <label for="cpf">CPF: </label>
+                <input id="cpf" type="text" class="input" required oninput="formatarCPFAoDigitar(this.value)">
+            </div>
+            <div>
+                <label for="salario">Salário: </label>
+                <input id="salario" type="text" class="input" required oninput="formatarSalario(this)">
+            </div>
+
+            <div>
+                <label for="cargo">Cargo: </label>
+                <select id="cargo" name="cargo" required>
+                    <option value="Desenvolvedor">Desenvolvedor</option>
+                    <option value="Analista">Analista</option>
+                    <option value="Designer">Designer</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Adicionar Funcionário" id="add">
+        </form>
+
+        <div id="divConteudo">
+            <!-- O conteúdo vai aqui -->
+        </div>
+    </main>
+
+</body>
+</html>
